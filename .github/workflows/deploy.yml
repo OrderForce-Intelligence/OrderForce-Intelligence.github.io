@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     name: Build Docusaurus
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Linux, ARM64, OrderForce-Intelligence, runner-1]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -44,7 +44,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, Linux, ARM64, OrderForce-Intelligence, runner-1]
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
